@@ -111,7 +111,7 @@ export class AudioManager {
     }
 
     // Efectos específicos para la simulación
-    playRoverMovement() {
+    /*playRoverMovement() {
         return this.playSound('rover_movement', 0.4, true);
     }
 
@@ -129,7 +129,7 @@ export class AudioManager {
 
     playEnvironmentChange() {
         return this.playSound('environment_change', 0.6, false);
-    }
+    }*/
 
     // Limpiar recursos
     cleanup() {
