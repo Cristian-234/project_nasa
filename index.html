@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HabitatX Mars</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Welcome Window -->
+  <div id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-container">
+      <div class="logo">🪐</div>
+      <h1>MARS HABITAT SIMULATOR</h1>
+      <div class="subtitle">Mars Colonization Simulation - NASA Space Challenge</div>
+
+      <div class="controls-info">
+        <h3>🎮 Main Controls:</h3>
+        <p><strong>WASD/Arrows:</strong> Astronaut movement</p>
+        <p><strong>Space:</strong> Jump | <strong>Mouse wheel:</strong> Zoom</p>
+        <p><strong>C:</strong> Change camera | <strong>Click:</strong> Interact with objects</p>
+        <p><strong>M:</strong> Mute sound</p>
+      </div>
+
+      <div class="audio-controls">
+        <label>
+          <input type="checkbox" id="soundToggle" checked>
+          🔊 Ambient Sound
+        </label>
+        <div class="volume-control">
+          <label>Volume: 
+            <input type="range" id="volumeSlider" min="0" max="100" value="70">
+          </label>
+        </div>
+      </div>
+
+      <button class="start-button pulse" id="startButton">
+        START SIMULATION
+      </button>
+
+      <div class="loading-bar" id="loadingBar">
+        <div class="loading-progress" id="loadingProgress"></div>
+      </div>
+
+      <div class="credits">
+        Developed for NASA Space Challenge 2024
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Simulation (hidden initially) -->
+  <div id="simulationScreen" class="simulation-screen" style="display: none;">
+    <canvas id="bg"></canvas>
+    <div id="infoBox">Click on an object to see details.</div>
+    <div id="audioControls" class="audio-controls-panel">
+      <button id="toggleSound">🔊</button>
+      <input type="range" id="gameVolumeSlider" min="0" max="100" value="70">
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+  <script src="/js/welcomeManager.js"></script>
+</body>
+</html>

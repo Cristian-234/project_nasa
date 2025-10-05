@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+}
+
+/* ===== VENTANA DE BIENVENIDA ===== */
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2a1a3a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.welcome-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 50px rgba(255, 179, 128, 0.3);
+  border: 2px solid #FFB380;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #FFB380;
+  text-shadow: 0 0 20px #FF7744;
+}
+
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #FF7744, #FFB380);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.mission-badge {
+  background: rgba(255, 119, 68, 0.2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  display: inline-block;
+  margin: 10px 0;
+  border: 1px solid #FF7744;
+}
+
+.features {
+  text-align: left;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255, 179, 128, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid #FFB380;
+}
+
+.features h3 {
+  margin-bottom: 15px;
+  color: #FFB380;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 10px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.features li:before {
+  content: '🚀';
+  position: absolute;
+  left: 0;
+}
+
+.controls-info {
+  background: rgba(255, 119, 68, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 1px solid #FF7744;
+}
+
+.controls-info h3 {
+  color: #FF7744;
+  margin-bottom: 10px;
+}
+
+.audio-controls {
+  background: rgba(255, 179, 128, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.audio-controls label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.volume-control {
+  margin-top: 10px;
+}
+
+.volume-control input {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.start-button {
+  background: linear-gradient(45deg, #FF7744, #FFB380);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 179, 128, 0.5);
+}
+
+.start-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  margin-top: 20px;
+  overflow: hidden;
+  display: none;
+}
+
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #FF7744, #FFB380);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.credits {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ===== SIMULACIÓN PRINCIPAL ===== */
+.simulation-screen {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#infoBox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 250px;
+  z-index: 100;
+}
+
+#controlsInfo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  max-width: 200px;
+  z-index: 100;
+}
+
+.audio-controls-panel {
+  position: absolute;
+  top: 10px;
+  right: 220px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.audio-controls-panel button {
+  background: #FFB380;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.audio-controls-panel input {
+  width: 80px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .welcome-container h1 {
+    font-size: 2rem;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  #controlsInfo {
+    max-width: 150px;
+    font-size: 10px;
+  }
+  
+  .audio-controls-panel {
+    right: 170px;
+  }
+}
