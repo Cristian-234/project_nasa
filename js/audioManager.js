@@ -10,7 +10,7 @@ export class AudioManager {
     }
 
     loadSounds() {
-        this.sounds.set('mars_wind', './sounds/mars_wind.mp3');
+        /*this.sounds.set('mars_wind', './sounds/mars_wind.mp3');
         this.sounds.set('rover_movement', './sounds/rover.mp3');
         this.sounds.set('habitat_ambient', './sounds/ambiental.mp3');
         this.sounds.set('interface_click', './sounds/interface_click.mp3');
@@ -19,10 +19,10 @@ export class AudioManager {
         // 👣 Sonido de pasos persistente
         this.footstepsAudio = new Audio('./sounds/footsteps.mp3');
         this.footstepsAudio.loop = true;
-        this.footstepsAudio.volume = 0.2 * this.globalVolume;
+        this.footstepsAudio.volume = 0.2 * this.globalVolume;*/
 
         // 🎵 Música de fondo
-        this.backgroundMusic = new Audio('./sounds/mars_ambient_music.mp3');
+        this.backgroundMusic = new Audio('./sounds/ambiental.mp3');
         this.backgroundMusic.loop = true;
         this.backgroundMusic.volume = 0.3 * this.globalVolume;
     }
